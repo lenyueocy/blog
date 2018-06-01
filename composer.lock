@@ -1,0 +1,85 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "4501ad24d8cd0f3cbef2f835b82a2ef4",
+    "content-hash": "31bf65cb3c4afeaef826c6de3377fa32",
+    "packages": [
+        {
+            "name": "loveteemo/qqconnect",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/loveteemo/qqconnect.git",
+                "reference": "22eada3bdf3cbb140dd9ae4caf4138386f75f356"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/loveteemo/qqconnect/22eada3bdf3cbb140dd9ae4caf4138386f75f356.zip",
+                "reference": "22eada3bdf3cbb140dd9ae4caf4138386f75f356",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "loveteemo\\qqconnect\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "long",
+                    "email": "admin@loveteemo.com"
+                }
+            ],
+            "description": "thinkphp 5 & qqconnect",
+            "time": "2016-10-26 02:20:24"
+        },
+        {
+            "name": "loveteemo/wxnative",
+            "version": "0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/loveteemo/wxnative.git",
+                "reference": "17985c5dc87beeb25a6b8406c1d3b19e7eaca614"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/loveteemo/wxnative/17985c5dc87beeb25a6b8406c1d3b19e7eaca614.zip",
+                "reference": "17985c5dc87beeb25a6b8406c1d3b19e7eaca614",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "loveteemo\\wxnative\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "long",
+                    "email": "admin@loveteemo.com"
+                }
+            ],
+            "description": "thinkphp 5 & weixinnative2",
+            "time": "2017-01-04 02:35:58"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

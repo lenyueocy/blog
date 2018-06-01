@@ -1,0 +1,148 @@
+[ 2018-05-25T08:22:10+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] chats.com/ [运行时间：0.554571s][吞吐率：1.80req/s] [内存消耗：2,414.22kb] [文件加载：57]
+[ info ] [ LANG ] /Users/lenyue/E HD/www/tp5bk30/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'chats.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8971667456; pgv_si=s1073228800; thinkphp_show_page_trace=0|0; port=9093; PHPSESSID=4c414f83341d9a6253340f8d2b3c811e',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/lenyue/E HD/www/tp5bk30/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Users/lenyue/E HD/www/tp5bk30/public/../application/index/view/index_index.html [ array (
+  0 => 'menuinfo',
+  1 => 'systeminfo',
+  2 => 'bannerlist',
+  3 => 'siderdata',
+  4 => 'footdata',
+  5 => 'tips',
+  6 => 'indexdata',
+  7 => 'title',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000817s ] mysql:dbname=blog;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_menu` [ RunTime:0.003006s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_menu` WHERE  `menu_view` = 1 ORDER BY menu_sort [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_system` [ RunTime:0.002747s ]
+[ sql ] [ SQL ] UPDATE `lt_system`  SET `sys_hits`=sys_hits+1  WHERE  `sys_id` = 1 [ RunTime:0.002132s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_system` LIMIT 1 [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_banner` [ RunTime:0.002727s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_banner` WHERE  `ban_view` = 1 [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_article` [ RunTime:0.002458s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_keyword` FROM `lt_article` WHERE  (  art_view != 0 ) ORDER BY art_hit desc [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view > 0 and art_down = 0  ) [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (0)  AND `art_down` = 0 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_comment` [ RunTime:0.002297s ]
+[ sql ] [ SQL ] SELECT `ac`.`com_id`,`ac`.`com_artid`,`ac`.`com_userid`,`m`.`mem_img`,`m`.`mem_name`,`ac`.`com_content`,`a`.`art_down` FROM `lt_comment` `ac` INNER JOIN `lt_article` `a` ON `a`.`art_id`=ac.com_artid and a.art_view > 0 INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`ac`.`com_userid` WHERE  (  ac.com_view = 1 and ac.com_artid > 0 ) ORDER BY ac.com_id desc LIMIT 5 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SELECT `c`.`com_id`,`c`.`com_content`,`m`.`mem_name`,`m`.`mem_img` FROM `lt_comment` `c` INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`c`.`com_userid` WHERE  `com_artid` = 0 ORDER BY com_id desc LIMIT 5 [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_hit`,`art_title` FROM `lt_article` ORDER BY art_hit desc LIMIT 8 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_article` WHERE  (  art_view > 0 ) LIMIT 1 [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view = 1 and com_artid != 0 ) LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view= 1 and com_artid = 0 ) LIMIT 1 [ RunTime:0.000213s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view = 2 and art_down = 0  ) [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (0)  AND `art_down` = 0 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_link` [ RunTime:0.003915s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_link` WHERE  `link_view` = 1 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_title` FROM `lt_article` WHERE  `art_down` = 1 ORDER BY art_downloadnums desc LIMIT 4 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_title`,`art_img`,`art_remark`,`art_keyword`,`art_view`,`art_hit`,`menu_name`,`art_original`,`nums` FROM `lt_article` LEFT JOIN (select count(*) nums,com_artid from lt_comment group by com_artid) c ON `c`.`com_artid`=`lt_article`.`art_id` INNER JOIN `lt_menu` `m` ON `m`.`menu_id`=`lt_article`.`art_pid` WHERE  (  art_view > 0 ) ORDER BY art_id desc LIMIT 0,5 [ RunTime:0.000542s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_tip` [ RunTime:0.002152s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_tip` WHERE  `tip_view` = 1 [ RunTime:0.000405s ]
+
+---------------------------------------------------------------
+[ 2018-05-25T08:22:58+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] chats.com/ [运行时间：0.504826s][吞吐率：1.98req/s] [内存消耗：2,414.23kb] [文件加载：57]
+[ info ] [ LANG ] /Users/lenyue/E HD/www/tp5bk30/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'chats.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=8971667456; pgv_si=s1073228800; thinkphp_show_page_trace=0|0; port=9093; PHPSESSID=4c414f83341d9a6253340f8d2b3c811e',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Index->index[ /Users/lenyue/E HD/www/tp5bk30/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Users/lenyue/E HD/www/tp5bk30/public/../application/index/view/index_index.html [ array (
+  0 => 'menuinfo',
+  1 => 'systeminfo',
+  2 => 'bannerlist',
+  3 => 'siderdata',
+  4 => 'footdata',
+  5 => 'tips',
+  6 => 'indexdata',
+  7 => 'title',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001033s ] mysql:dbname=blog;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_menu` [ RunTime:0.005823s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_menu` WHERE  `menu_view` = 1 ORDER BY menu_sort [ RunTime:0.000894s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_system` [ RunTime:0.005401s ]
+[ sql ] [ SQL ] UPDATE `lt_system`  SET `sys_hits`=sys_hits+1  WHERE  `sys_id` = 1 [ RunTime:0.001531s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_system` LIMIT 1 [ RunTime:0.001054s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_banner` [ RunTime:0.003517s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_banner` WHERE  `ban_view` = 1 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_article` [ RunTime:0.005475s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_keyword` FROM `lt_article` WHERE  (  art_view != 0 ) ORDER BY art_hit desc [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view > 0 and art_down = 0  ) [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (0)  AND `art_down` = 0 [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_comment` [ RunTime:0.007007s ]
+[ sql ] [ SQL ] SELECT `ac`.`com_id`,`ac`.`com_artid`,`ac`.`com_userid`,`m`.`mem_img`,`m`.`mem_name`,`ac`.`com_content`,`a`.`art_down` FROM `lt_comment` `ac` INNER JOIN `lt_article` `a` ON `a`.`art_id`=ac.com_artid and a.art_view > 0 INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`ac`.`com_userid` WHERE  (  ac.com_view = 1 and ac.com_artid > 0 ) ORDER BY ac.com_id desc LIMIT 5 [ RunTime:0.001273s ]
+[ sql ] [ SQL ] SELECT `c`.`com_id`,`c`.`com_content`,`m`.`mem_name`,`m`.`mem_img` FROM `lt_comment` `c` INNER JOIN `lt_member` `m` ON `m`.`mem_id`=`c`.`com_userid` WHERE  `com_artid` = 0 ORDER BY com_id desc LIMIT 5 [ RunTime:0.001639s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_hit`,`art_title` FROM `lt_article` ORDER BY art_hit desc LIMIT 8 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_article` WHERE  (  art_view > 0 ) LIMIT 1 [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view = 1 and com_artid != 0 ) LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_comment` WHERE  (  com_view= 1 and com_artid = 0 ) LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SELECT `art_id` FROM `lt_article` WHERE  (  art_view = 2 and art_down = 0  ) [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_article` WHERE  `art_id` IN (0)  AND `art_down` = 0 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_link` [ RunTime:0.005694s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `lt_link` WHERE  `link_view` = 1 LIMIT 1 [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_title` FROM `lt_article` WHERE  `art_down` = 1 ORDER BY art_downloadnums desc LIMIT 4 [ RunTime:0.001443s ]
+[ sql ] [ SQL ] SELECT `art_id`,`art_title`,`art_img`,`art_remark`,`art_keyword`,`art_view`,`art_hit`,`menu_name`,`art_original`,`nums` FROM `lt_article` LEFT JOIN (select count(*) nums,com_artid from lt_comment group by com_artid) c ON `c`.`com_artid`=`lt_article`.`art_id` INNER JOIN `lt_menu` `m` ON `m`.`menu_id`=`lt_article`.`art_pid` WHERE  (  art_view > 0 ) ORDER BY art_id desc LIMIT 0,5 [ RunTime:0.001410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lt_tip` [ RunTime:0.005214s ]
+[ sql ] [ SQL ] SELECT * FROM `lt_tip` WHERE  `tip_view` = 1 [ RunTime:0.000587s ]
+
+---------------------------------------------------------------
