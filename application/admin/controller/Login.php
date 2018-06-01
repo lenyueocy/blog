@@ -23,7 +23,7 @@ class Login extends Controller
     {
         $LoginLogic = new LoginLogic();
         $this->redirect('Admin/Index/index');
-        /*if( !Session::has('qq.openid') ){
+        if( !Session::has('qq.openid') ){
             $tip = 0;
             $this->assign('tip',$tip);
         }else if( !$LoginLogic->checkaccess(Session::get('qq.mem_id'))){
@@ -31,7 +31,7 @@ class Login extends Controller
             $this->assign('tip',$tip);
         }else{
             $this->redirect('Admin/Index/index');
-        }*/
+        }
         return $this->fetch();
     }
 }
