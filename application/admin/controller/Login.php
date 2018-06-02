@@ -22,7 +22,6 @@ class Login extends Controller
     public function index()
     {
         $LoginLogic = new LoginLogic();
-//        $this->redirect('Admin/Index/index');
         if( !Session::has('qq.openid') ){
             $tip = 0;
             $this->assign('tip',$tip);

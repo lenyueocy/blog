@@ -21,7 +21,6 @@ class Login
      */
     public function checkaccess($uid)
     {
-        return true;
         $MemberModel = new MemberModel();
         $accesslist = $MemberModel->getAccess();
         if( !empty($uid) && !empty($accesslist) && in_array($uid,$accesslist) ){
