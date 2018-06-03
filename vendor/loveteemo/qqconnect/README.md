@@ -2,7 +2,7 @@
 
 类库是基于Oauth2.0结合ThinkPHP 5 修改部分内容，仅适配 ThinkPhP 5
 
-个人博客主页： http://www.loveteemo.com
+个人博客主页： http://www.lenyue.cn
 
 ## 安装方法
 

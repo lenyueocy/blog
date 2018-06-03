@@ -19,7 +19,7 @@ $(document).ready(function() {
     $("#weixin").click(function(){
         layer.open({
             type: 1,
-            content: '<div class="weinxi-open"><img src="./static/home/img/icon/weixin.jpg"></div>',
+            content: '<div class="weinxi-open"><img src="./static/home/img/icon/weixin.jpg" style="width: 100%;height: 100%;border: none;"></div>',
             title: false
         });
     });

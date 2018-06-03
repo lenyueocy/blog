@@ -41,7 +41,6 @@
     <div class="row header">
         <div class="col-lg-4 col-md-4 header-logo">
             <a title="{$Think.config.NAME}" href="{:url('Index/index')}"><img src="home_img/icon/logo.png" /></a>
-            <h5 class="hidden-xs">{$systeminfo.sys_title2}</h5>
         </div>
         <div class="header-menu col-lg-5 col-md-5 col-xs-12">
             <nav class="navbar navbar-default">
@@ -79,31 +78,22 @@
     </div>
     <!--头部结束-->
     <div class="row aerousel">
-
-        {block name="banner"}
-        <!-- 轮播开始 -->
-        <script src="home_js/jquery.banner.js"></script>
-        <ul class="hiSlider container hidden-xs banner">
-            {volist name="bannerlist" id="b"}
-            <li class="hiSlider-item" data-title="{$b.ban_title}"><a href=".{$b.ban_url}" target="_blank"><img src="{$b.ban_img}" alt="{$b.ban_title}"></a></li>
-            {/volist}
-        </ul>
-        <script>
-            $('.banner').hiSlider({
-                isFlexible: true,
-                isSupportTouch: true,
-                isShowControls: false,
-                titleAttr: function(){
-                    return $('img', this).attr('alt');
-                }
-            });
-        </script>
-        {/block}
-
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <ul class="testslider">
+                {// if $tips}
+                    {// volist name="tips" id="tip"}
+                        <!-- <li><i class="iconfont"><img src="../static/home/img/notice.gif" style="height: 45px;"></i>&nbsp;&nbsp;{//$tip.tip_title}</li> -->
+                    {//volist}
+                {//else}
+                    <!-- <li><i class="iconfont"><img src="../static/home/img/notice.gif" style="height: 45px;"></i>&nbsp;&nbsp;暂无公告</li> -->
+                {//if}
+                <li><i class="iconfont"><img src="../static/home/img/notice.gif" style="height: 45px;"></i>&nbsp;&nbsp;暂无公告</li>
+            </ul>
+        </div>
         <div class="col-md-8 row-left index">
             {block name="left"}{/block}
         </div>
-        <div class="col-md-4 row-right index">
+        <div class="col-md-4 row-right index" style="background-color: rgba(255,255,255,0.7);padding-top: 10px;border-radius: 6px;">
             {block name="right"}
             <div class="sider-margin sider-box">
                 <div class="sider-search">
@@ -119,7 +109,7 @@
                 <div class="sider-follow hidden-xs sider-margin">
                     <a href="{$Think.config.auth.githuburl}" target="_blank"><i class="iconfont icon-github"></i></a>
                     <a><i class="iconfont icon-weixin" id="weixin"></i></a>
-                    <a href="{$Think.config.auth.weibourl}" target="_blank"><i class="iconfont icon-weibo"></i></a>
+                    <a href="http://{$Think.server.SERVER_NAME}/qq?qq={$Think.config.auth.weibourl}" target="_blank"><i class="iconfont icon-qq"></i></a>
                 </div>
                 <div class="sider-follow-hr hidden-xs"></div>
             </div>
@@ -204,32 +194,15 @@
     <div class="container foot">
         <div class="row foot-margin">
             <div class="col-md-3 ">
-                <h4>程序相关</h4>
-                <p class="foot-box">
-                    <i class="iconfont icon-group"></i>&nbsp;群：&nbsp;<a href="{$Think.config.auth.qqjoin}" target="_blank" class="foot-my">
-                    <strong>{$Think.config.auth.qqgroup}</strong>
-                </a>
-                    <span class="foot-box-r">
-						<i class="iconfont icon-comment"></i>&nbsp;
-                        <a href="{$Think.config.auth.baiduurl}" target="_blank" class="foot-my">邀你点评</a>
-                    </span>
-                </p>
-                <p class="foot-box">
-                    <i class="iconfont icon-program"></i>&nbsp;程序：&nbsp;{$Think.config.auth.blogname}
-                    <span class="foot-box-r">
-						<i class="iconfont icon-version"></i>&nbsp;版本：&nbsp;Beta {$systeminfo.sys_version}
-                    </span>
-                </p>
-                <p class="foot-box">
-                    <i class="iconfont icon-framework"></i>&nbsp;框架：&nbsp;{$Think.config.auth.framework}
-                    <span class="foot-box-r">
-						<i class="iconfont icon-author"></i>&nbsp;作者：&nbsp;{$Think.config.auth.author}
-                    </span>
-                </p>
-                <p class="foot-box">
-                    源码声明：&nbsp;请参考&nbsp;
-                    <a href="{$Think.config.auth.docurl}">使用手册</a>
-                </p>
+                <h4>排行版</h4>
+                <ul class="bottom-rank">
+                    <li><a href="javascript:;"><img src="http://www.100txy.com/Upload/image/album/201801265a6aa5325b5b4.jpg" style=""></li>
+                    <li><a href="javascript:;"><img src="http://www.100txy.com/Upload/image/album/201801265a6aa5325b5b4.jpg" style=""></li>
+                    <li><a href="javascript:;"><img src="http://www.100txy.com/Upload/image/album/201801265a6aa5325b5b4.jpg" style=""></li>
+                    <li><a href="javascript:;"><img src="http://www.100txy.com/Upload/image/album/201801265a6aa5325b5b4.jpg" style=""></li>
+                    <li><a href="javascript:;"><img src="http://www.100txy.com/Upload/image/album/201801265a6aa5325b5b4.jpg" style=""></li>
+                    <li><a href="javascript:;"><img src="http://www.100txy.com/Upload/image/album/201801265a6aa5325b5b4.jpg" style=""></li>
+                </ul>
             </div>
             <div class="col-md-3 hidden-xs">
                 <h4>程序统计</h4>
@@ -263,7 +236,7 @@
                 {/volist}
             </div>
             <div class="col-md-3 hidden-xs">
-                <h4>资源分享</h4>
+                <h4>友链</h4>
                 {volist name="footdata.download" id="down"}
                 <p class="foot-box-art">
                     <i class="iconfont icon-comment"></i>&nbsp;<a href="{:url('Download/info',['id'=>$down['art_id']])}" title="{$down.art_title}">{$down.art_title}</a>

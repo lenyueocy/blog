@@ -1305,7 +1305,7 @@ pre code {
     width: 50%;
   }
   .col-lg-5 {
-    width: 41.66666667%;
+    width: 50%;
   }
   .col-lg-4 {
     width: 33.33333333%;
@@ -3577,7 +3577,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color:rgba(255,255,255,0.8);
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
@@ -4108,6 +4108,8 @@ a.thumbnail.active {
 }
 .alert > p,
 .alert > ul {
+  margin-left: 15px;
+  font-size: 18px;
   margin-bottom: 0;
 }
 .alert > p + p {
@@ -4126,7 +4128,7 @@ a.thumbnail.active {
 }
 .alert-success {
   color: #3c763d;
-  background-color: #dff0d8;
+  background: rgba(255,255,255,0.5);
   border-color: #d6e9c6;
 }
 .alert-success hr {

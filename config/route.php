@@ -13,6 +13,7 @@ use think\Route;
 
 Route::rule('index','Index/index');
 Route::rule('about','About/index');
+Route::rule('qq','Qq/index');
 Route::rule('links','Links/index');
 Route::rule('comment','Comment/index');
 Route::rule('comment/ajax','Comment/ajaxList','post');

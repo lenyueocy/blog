@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="Zh-cn">
 <head>
-    <title>LoveTeemo Admin</title>
+    <title>后台管理-冷月博客</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="admin_css/bootstrap.min.css" />
@@ -16,7 +16,7 @@
 
 
 <div id="header">
-    <h1><a href="{:url('Admin/Index/index')}">LoveTeemo Admin</a></h1>
+    <h1 onclick="alert(1)" style="position:relative"><a href="{:url('Admin/Index/index')}">后台管理-冷月博客</a></h1>
 </div>
 <div id="user-nav" class="navbar navbar-inverse">
     <ul class="nav btn-group">
@@ -36,10 +36,10 @@
 </div>
 
 <div id="sidebar">
-    <a href="#" class="visible-phone"><i class="icon icon-home"></i>仪表板</a>
+    <a href="#" class="visible-phone"><i class="icon icon-home"></i>首页</a>
     <ul>
         <li class="{:adminmenu('Index')}">
-            <a href="{:url('Admin/Index/index')}"><i class="icon icon-home"></i> <span>仪表板</span></a>
+            <a href="{:url('Admin/Index/index')}"><i class="icon icon-home"></i> <span>后台首页</span></a>
         </li>
         <li class="{:adminmenu('System')}">
             <a href="{:url('Admin/System/index')}"><i class="icon icon-cog"></i> <span>系统设置</span></a>
@@ -90,7 +90,7 @@
         {/block}
         <div class="row-fluid">
             <div id="footer" class="span12">
-                2016 &copy; LoveTeemo’s Blog. Brought to you by <a href="http://www.loveteemo.com">long</a>
+                2016 &copy; LoveTeemo’s Blog. Brought to you by <a href="http://www.lenyue.cn">long</a>
             </div>
         </div>
     </div>

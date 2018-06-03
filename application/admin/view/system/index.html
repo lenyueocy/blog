@@ -15,7 +15,8 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#tab1">常规设置</a></li>
                 <li><a data-toggle="tab" href="#tab2">显示设置</a></li>
-                <li><a data-toggle="tab" href="#tab3">邮件设置</a></li>
+                <li><a data-toggle="tab" href="#tab3">QQ互联设置</a></li>
+                <li><a data-toggle="tab" href="#tab4">图片设置</a></li>
             </ul>
         </div>
         <div class="widget-content tab-content">
@@ -113,7 +114,7 @@
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">微博主页</label>
+                                <label class="control-label">QQ</label>
                                 <div class="controls">
                                     <input type="text" name="weibourl" placeholder="请输入微博主页" value="{$Think.config.auth.weibourl}" />
                                 </div>
@@ -196,6 +197,23 @@
                                 <label class="control-label">QQ登陆回调地址</label>
                                 <div class="controls">
                                     <input type="text" name="callback" placeholder="请输入QQ登陆回调地址" value="{$qq_inc.callback}"/>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary sysform" data-url="{:url('Admin/System/sdk')}">修改</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="tab4" class="tab-pane ">
+                <div class="widget-box">
+                    <div class="widget-content nopadding ">
+                        <form class="form-horizontal" >
+                            <div class="control-group">
+                                <label class="control-label">首页背景图</label>
+                                <div class="controls">
+                                    <input type="text" name="appid" placeholder="请输入QQ登陆AppID" value="{$qq_inc.appid}"/>
                                 </div>
                             </div>
                             <div class="form-actions">

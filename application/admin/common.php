@@ -29,7 +29,7 @@ function makeImg($str)
 	$base64	= base64_decode(str_replace(' ','+',str_replace('data:image/png;base64,', '', $str)));
 	$url 	= 'uploads/'. date('Ymd');
 	if(!is_dir($url)){
-		mkdir($url);
+		mkdir($url,755,true);
 	}
 	file_put_contents($url . '/' . $time . '.jpg', $base64);
 	$url =  '/' . $url . '/' . $time . '.jpg';

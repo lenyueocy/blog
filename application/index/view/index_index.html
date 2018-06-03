@@ -1,12 +1,5 @@
 {extend name="layout" /}
 {block name="left"}
-    <div class="alert alert-success alert-dismissible" role="alert">
-            <ul class="testslider">
-                {volist name="tips" id="tip"}
-                <li><i class="iconfont icon-notice"></i>&nbsp;{$tip.tip_title}</li>
-                {/volist}
-        </ul>
-    </div>
     <script src="home_js/jquery.textSlider.js"></script>
     <script>
         $(function(){

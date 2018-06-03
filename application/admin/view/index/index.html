@@ -1,18 +1,18 @@
 {extend name="layout"}
 {block name="title"}
 <div id="content-header">
-    <h1>仪表盘主页</h1>
+    <h1>基本信息</h1>
 </div>
 <div id="breadcrumb">
     <a href="{:url('Admin/Index/index')}" title="回到首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
-    <a href="#" class="current">仪表盘</a>
+    <a href="#" class="current">基本信息</a>
 </div>
 {/block}
 {block name="content"}
 <div class="row-fluid">
     <div class="span12">
         <div class="alert alert-info">
-            欢迎回到 <strong>LoveTeemo’Blog Admin</strong>. 请保持更新频率和质量哟!
+            欢迎回来. 请保持更新频率和质量哟!
             <a href="#" data-dismiss="alert" class="close">×</a>
         </div>
         <div class="widget-box">
@@ -65,21 +65,15 @@
                                     </tr>
                                     <tr>
                                         <td>冷月博客官网：</td>
-                                        <td><a href="http://www.loveteemo.com" target="_blank">http://www.loveteemo.com</a></td>
-                                        <td>贡献者：</td>
-                                        <td>Long</td>
+                                        <td><a href="http://www.lenyue.cn" target="_blank">http://www.lenyue.cn</a></td>
+                                        <td>作者：</td>
+                                        <td>Lenyue</td>
                                     </tr>
                                     <tr>
                                         <td>当前版本：</td>
                                         <td>v3.0 dev</td>
-                                        <td>系统使用协议：</td>
-                                        <td><a href="http://www.loveteemo.com/license.html" target="_blank">http://www.loveteemo.com/license.html</a></td>
-                                    </tr>
-                                    <tr>
                                         <td>QQ交流群</td>
                                         <td>{$Think.config.auth.qqgroup}</td>
-                                        <td>使用手册</td>
-                                        <td><a href="{$Think.config.auth.docurl}" target="_blank">{$Think.config.auth.docurl}</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
