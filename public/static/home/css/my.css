@@ -218,7 +218,7 @@ article h5 .reprint{display:inline-block;vertical-align:bottom;font-size:14px;co
 .links-two-item{width: 280px;float: left;padding-left: 10px;padding-right: 10px;position: relative;overflow: hidden;height: 150px;margin-bottom: 20px;}
 .links-two-3d{ position: absolute;  transform-style: preserve-3d;  backface-visibility:hidden;  transition:all 1s;  }
 .links-two-inner{height: 150px;transform:rotateY(0deg);background: #fff;width: 100%;padding: 20px;opacity: 0.9;}
-.links-two-bg{transform:rotateY(-180deg);height: 150px;background: #5CB85C;width: 100%;padding: 20px;color:#fff;}
+.links-two-bg{transform:rotateY(-180deg);height: 150px;background: #2a3440;width: 100%;padding: 20px;color:#fff;opacity: 0.9;color: #FFF;}
 .links-two-item:hover .links-two-inner{  transform:rotateY(-180deg);  }
 .links-two-item:hover .links-two-bg{  transform:rotateY(0deg);  }
 .links-h3{overflow: hidden;font-size: 18px;text-align: center;font-weight: 400;height: 40px;line-height: 40px;margin:0;word-wrap: normal !important;  white-space: nowrap;  text-overflow: ellipsis;}
