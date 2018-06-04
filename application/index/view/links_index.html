@@ -5,9 +5,8 @@
 <div class="links-head-ban">
     <div class="links-head">
         <h3><i class="iconfont icon-links" style="font-size: 50px;"></i></h3>
-        <h5>{$Think.config.auth.blogname}朋友圈</h5>
-        <p>为避免版权纠纷，本站只接受网站完善并且原创更新比较稳定相关的工作室、站点、博客、论坛……</p>
-        <p>申请链接请直接在留言板留言，或发送邮件至admin@loveteemo.com</p>
+        <h5>{$Think.config.auth.blogname}</h5>
+        <p>申请链接请直接在留言板留言，或发送邮件至492708759@qq.com</p>
     </div>
 </div>
 
@@ -19,10 +18,13 @@
                 <div class="links-two-item">
                     <div class="links-two-inner links-two-3d">
                         <a href="{$lt.link_url}" target="_blank" title="{$lt.link_name}">
-                            <h3 class="links-h3"><img src="{$lt.link_favicon}" width="24" alt="{$lt.link_name}">
+                            <div style="text-align: center">
+                            <img src="{$lt.link_favicon}" width="80" alt="{$lt.link_name}" style="border-radius: 50%;border: 1px solid #ec5228;">
+                            <h3 class="links-h3">
                                 <span>{$lt.link_name}</span>
                             </h3>
-                        <p class="links-p" style="margin-top: 10px">{$lt.link_content}</p>
+                            </div>
+                        <!--p class="links-p" style="margin-top: 10px">{/*$lt.link_content*/}</p-->
                         </a>
                     </div>
                     <div class="links-two-bg links-two-3d">

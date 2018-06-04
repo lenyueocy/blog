@@ -189,7 +189,7 @@ article h5 .reprint{display:inline-block;vertical-align:bottom;font-size:14px;co
 
 
 .links,.resoure {padding:10px;width: 100%;height: auto;}
-.links-head-ban{width:100%;text-align:center;padding-bottom:30px;background-color:#2a3440;position:relative;color:#fff;overflow: hidden}
+.links-head-ban{width:70%;margin:0 auto;opacity:0.6;text-align:center;padding-bottom:30px;background-color:#2a3440;position:relative;color:#fff;overflow: hidden}
 .links-head-ban:after{width:100%;height:100%;position:absolute;top:0;left:0;background:url(../img/icon/mask.png) repeat;content:""}
 .links-head{margin-left:10px;margin-right:10px;position:relative}
 .links-head-ban h3{  font-size: 50px;  margin-top: 20px;  margin-bottom: -10px;  -webkit-animation: fadeIn 1s linear;  animation: fadeIn 1s linear;  }
@@ -217,7 +217,7 @@ article h5 .reprint{display:inline-block;vertical-align:bottom;font-size:14px;co
 .links-two{padding-top: 20px;min-height: 700px;margin: 0 auto}
 .links-two-item{width: 280px;float: left;padding-left: 10px;padding-right: 10px;position: relative;overflow: hidden;height: 150px;margin-bottom: 20px;}
 .links-two-3d{ position: absolute;  transform-style: preserve-3d;  backface-visibility:hidden;  transition:all 1s;  }
-.links-two-inner{height: 150px;transform:rotateY(0deg);background: #fff;width: 100%;padding: 20px;}
+.links-two-inner{height: 150px;transform:rotateY(0deg);background: #fff;width: 100%;padding: 20px;opacity: 0.9;}
 .links-two-bg{transform:rotateY(-180deg);height: 150px;background: #5CB85C;width: 100%;padding: 20px;color:#fff;}
 .links-two-item:hover .links-two-inner{  transform:rotateY(-180deg);  }
 .links-two-item:hover .links-two-bg{  transform:rotateY(0deg);  }
