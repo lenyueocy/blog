@@ -8,7 +8,7 @@
     </script>
 
     {volist name="indexdata.articles" id="indexart" empty="暂无文章"}
-        <article>
+        <article onclick="location.href='{:url('Article/index',['id'=>$indexart['art_id']])}';">
             <h5>
                 {eq name="indexart.art_original" value="1"}
                 <span class="original">[ 原创 ]</span>
@@ -30,8 +30,10 @@
                     <!--<a class="article-img-a image-light" href="{:url('Article/index',['id'=>$indexart['art_id']])}">-->
                         <!--<img src="home_img/{$indexart.art_img}" class="article-img" alt="{$indexart.art_title}" title="{$indexart.art_title}" />-->
                     <!--</a>-->
+                    <div style="width: 100%;">
                     {$indexart.art_remark}
-                    <a href="{:url('Article/index',['id'=>$indexart['art_id']])}" class="article-look">继续阅读</a>
+                    </div>
+                    <!-- <a href="{:url('Article/index',['id'=>$indexart['art_id']])}" class="article-look">继续阅读</a> -->
                 </div>
                 <footer class="article-footer">
                     <div class="article-footer-l">
