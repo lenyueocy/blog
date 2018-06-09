@@ -39,9 +39,9 @@
                         <td>{$m.level|treeEmpty}{$m.menu_name}</td>
                         <td>{$m.menu_remark}</td>
                         <td>{$m.menu_url}</td>
-                        <td style="text-align: center"><button class="btn btn-mini changgeview" data-url="{:url('Admin/Cate/view')}" data-id="{$m.menu_id}" data-view="{$m.menu_view}">{$m.menu_view?'显示':'不显示'}</button></td>
+                        <td style="text-align: center;"><button {if !$m.menu_view}style="background:#FF735D;color: #FFF;"{/if} class="btn btn-mini changgeview" data-url="{:url('Admin/Cate/view')}" data-id="{$m.menu_id}" data-view="{$m.menu_view}">{$m.menu_view?'显示':'不显示'}</button></td>
                         <td>
-                            <input type="text" value="{$m.menu_sort}" name="sort[{$k}][menu_sort]">
+                            <input type="text" value="{$m.menu_sort}" name="sort[{$k}][menu_sort]" >
                             <input type="hidden" value="{$m.menu_id}" name="sort[{$k}][menu_id]">
                         </td>
                         <td style="text-align: center">

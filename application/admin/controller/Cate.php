@@ -29,7 +29,7 @@ class Cate extends Auth
 				return $result;
 			}
 			$menudata['menu_createtime'] = date('Y-m-d H:i:s');
-			$menudata['menu_view']		 = 0;
+			$menudata['menu_view']		 = 1;
 			$MenuModel = new MenuModel();
 			$res = $MenuModel->add($menudata);
 			if($res !== false){
