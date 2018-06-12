@@ -52,7 +52,7 @@ pre{background-color:#fdf6e3 !important;}
 a:hover{text-decoration:none;color:#7fecad;cursor:pointer;}
 ::-webkit-scrollbar{width:8px}
 ::-webkit-scrollbar-thumb{background-color:#333}
-.from{color:#fff;padding:1px 3px;background-color:#5CB85C;border-radius:5px;font-size:12px}
+.from{color:#fff;padding:5px;background-color:#5CB85C;border-radius:5px;font-size:12px}
 .tui{float: right;font-size: 25px !important;color:#199E46 }
 .menu{    position: relative;}
 .menu-bar{    background: #6bc30d;  height: 3px;  position: absolute;  bottom: 0;}

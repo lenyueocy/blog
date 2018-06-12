@@ -27,7 +27,8 @@
         <div class="top-l"><a class="from">{:getOs()}</a></div>
         <div class="top-r">
             {empty name="Think.session.qq.nick"}
-                <span class="from qqlogin" data-url="{:url('Base/login')}" data-callback="{:url('Base/callback')}" style="cursor: pointer">QQ访问</span>
+                <!--span class="from qqlogin" data-url="{//:url('Base/login')}" data-callback="{//:url('Base/callback')}" style="cursor: pointer">QQ访问</span>-->
+                <span class="from qqlogin" data-url="{:url('Base/login')}" data-callback="{:url('Base/callback')}" style="cursor: pointer"><img src="./static/home/img/icon/qq_logo.png">QQ登录</span>
             {else/}
                 {$Think.session.qq.nick} <a class='from' href="{:url('Base/qqout')}">退出</a>
             {/empty}
