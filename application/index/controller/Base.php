@@ -19,8 +19,12 @@ use app\index\model\Menu as MenuModel;
 use app\index\model\System as SystemModel;
 use app\index\logic\Article as ArticleLogic;
 use app\index\logic\Member as MemberLogic;
+use app\index\model\Visitor;
 use loveteemo\qqconnect\QC;
 use think\Controller;
+use think\debug;
+use app\index\model\Visitor as VisitorModel;
+use think\VisitorInfo;
 
 class Base extends Controller
 {
@@ -37,6 +41,7 @@ class Base extends Controller
         $SystemModel   			= new SystemModel();
         $LinkModel				= new LinkModel();
         $ArticleLogic 			= new ArticleLogic();
+        $VisitorModel = new VisitorModel();
 
         // 导航菜单
         if( empty( $menuinfo = cache('menuinfo') ) ){
@@ -48,6 +53,21 @@ class Base extends Controller
         // 系统访问量
 		$SystemModel->where('sys_id',1)->setInc('sys_hits');
 
+		//收集系统访客信息
+        $ipInfo = VisitorInfo::getIpInfo()['data'];
+        $data = [
+            'os'=>VisitorInfo::getOs(),
+            'ip'=>VisitorInfo::GetIp(),
+            'lang'=>VisitorInfo::GetLang(),
+            'isp'=>$ipInfo['isp'],
+            'country'=>$ipInfo['country'],
+            'region'=>$ipInfo['region'],
+            'city'=>$ipInfo['city'],
+            'osinfo'=>$_SERVER['HTTP_USER_AGENT'],
+            'time'=>time(),
+            'datetime'=>date('Y-m-d H:i:s'),
+        ];
+        $PK = $VisitorModel->insert($data);
         // 系统参数
         if( empty( $systeminfo = cache('systeminfo') ) ){
             $systeminfo = $SystemModel::get();
