@@ -65,7 +65,8 @@ class  Article extends Model
      */
     public function getCateList($where,$start=0,$num=8)
     {
-        $data = $this->field('art_id,art_title,art_img,art_remark,art_keyword,art_view,art_hit,menu_name,art_original,nums')->join('(select count(*) nums,com_artid from lt_comment group by com_artid) c','c.com_artid = lt_article.art_id','left')->join('lt_menu m','m.menu_id = lt_article.art_pid')->where($where)->where("art_view > 0")->limit($start,$num)->order('art_id desc')->select();
+//        $data = $this->field('art_id,art_title,art_img,art_remark,art_keyword,art_view,art_hit,menu_name,art_original,nums')->join('(select count(*) nums,com_artid from lt_comment group by com_artid) c','c.com_artid = lt_article.art_id','left')->join('lt_menu m','m.menu_id = lt_article.art_pid')->where($where)->where("art_view > 0")->limit($start,$num)->order('art_id desc')->select();
+        $data = $this->field('art_id,art_title,art_img,art_addtime,art_author,art_remark,art_keyword,art_view,art_hit,menu_name,art_original,nums')->join('(select count(*) nums,com_artid from lt_comment group by com_artid) c','c.com_artid = lt_article.art_id','left')->join('lt_menu m','m.menu_id = lt_article.art_pid')->where($where)->where("art_view > 0")->order('art_id desc')->select();
         return $data;
     }
 

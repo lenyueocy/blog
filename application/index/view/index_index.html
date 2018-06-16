@@ -10,12 +10,7 @@
     {volist name="indexdata.articles" id="indexart" empty="暂无文章"}
         <article onclick="location.href='{:url('Article/index',['id'=>$indexart['art_id']])}';">
             <h5>
-                {eq name="indexart.art_original" value="1"}
-                <span class="original">[ 原创 ]</span>
-                <i class="iconfont icon-recommend tui"></i>
-                {else /}
-                <span class="reprint">[ 转载 ]</span>
-                {/eq}
+                <i class="iconfont icon-comment" style="font-size: 25px;"></i>
                 <a href="{:url('Article/index',['id'=>$indexart['art_id']])}">{$indexart.art_title}</a>
             </h5>
             <div class="clearfix" >
@@ -23,25 +18,23 @@
                     <div class="article-css3">
                         <img class="article-css3_img" src="{$indexart.art_img}" alt="Image 01">
                         <div class="article-css3_caption">
-                            <p class="article-css3_caption_p">{$indexart.art_title}</p>
+                            <p class="article-css3_caption_p" >{$indexart.art_author}</p>
                             <a class="article-css3_caption_a" href="{:url('Article/index',['id'=>$indexart['art_id']])}" target="_blank"></a>
                         </div>
                     </div>
-                    <!--<a class="article-img-a image-light" href="{:url('Article/index',['id'=>$indexart['art_id']])}">-->
-                        <!--<img src="home_img/{$indexart.art_img}" class="article-img" alt="{$indexart.art_title}" title="{$indexart.art_title}" />-->
-                    <!--</a>-->
                     <div style="width: 100%;">
-                    {$indexart.art_remark}
+                        {$indexart.art_remark}
                     </div>
-                    <!-- <a href="{:url('Article/index',['id'=>$indexart['art_id']])}" class="article-look">继续阅读</a> -->
                 </div>
                 <footer class="article-footer">
                     <div class="article-footer-l">
                         <i class="iconfont icon-tags"></i>{$indexart.art_keyword|getKeyword}
                     </div>
                     <div class="article-footer-r">
-                        <i class="iconfont icon-hit"></i> {$indexart.art_hit}&nbsp;&nbsp;
-                        <i class="iconfont icon-review"></i> {$indexart.nums|getNums}
+                        <i class="iconfont icon-author"></i>&nbsp;{$indexart.art_author}&nbsp;
+                        <i class="iconfont icon-time"></i>&nbsp;&nbsp;{$indexart.art_addtime|date='Y-m-d H:i',###}&nbsp;&nbsp;
+                        <i class="iconfont icon-hit"></i>{$indexart.art_hit}&nbsp;
+                        <i class="iconfont icon-gustcomment"></i> {$indexart.nums|getNums}
                     </div>
                 </footer>
             </div>

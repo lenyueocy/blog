@@ -3,3 +3,4 @@ public/install
 config/database.php
 runtime/log/*
 runtime/temp/*
+runtime/cache

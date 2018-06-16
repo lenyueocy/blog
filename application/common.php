@@ -214,7 +214,7 @@ function getTags($arr,$str=''){
  */
 function getNums($str){
     if(empty($str)){
-        return '<small>暂无</small>';
+        return '<small>0</small>';
     }else{
         return ''.$str.'';
     }
