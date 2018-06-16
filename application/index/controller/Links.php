@@ -23,7 +23,7 @@ class Links extends Base
 		$LinkModel = new LinkModel();
         $linkdata = $LinkModel->getLinks('link_view = 1');
         $this->assign('linkdata',$linkdata);
-        $this->assign('title',"邻居");
+        $this->assign('title',"友链");
         return $this->fetch('index');
     }
 }
