@@ -2,7 +2,7 @@
 /**
  * author by OCY, 2018/07/01 13:12.
  */
-echo system('cd /srv/www/blog && git pull >> /tmp/test.log');
+echo system('cd /srv/www/blog && git pull 2>&1');
 echo `cd /srv/www/blog && git pull`;
 $msg = `git pull`;
 echo '<br />';
