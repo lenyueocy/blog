@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>{$title} - {$systeminfo.sys_title}</title>
+    <title>{if !empty($index_title)}{$index_title}{else}{$title} - {$systeminfo.sys_title}{/if}</title>
     <!--<title>冷月博客 - 专注于开发技术分享与生活记录</title>-->
     <meta name="keywords" content="{$systeminfo.sys_keyword}" />
     <meta name="description" content="{$systeminfo.sys_remark}" />

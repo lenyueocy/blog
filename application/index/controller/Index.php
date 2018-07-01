@@ -12,6 +12,7 @@ namespace app\index\controller;
 use app\index\controller\Base;
 use app\index\model\Article as ArticleModel;
 use app\index\model\Tip as TipModel;
+use app\index\model\System as SystemModel;
 
 class Index extends Base
 {
@@ -22,9 +23,16 @@ class Index extends Base
     public function index()
     {
 		$ArticleModel = new ArticleModel();
+        $SystemModel  = new SystemModel();
         $indexdata['articles'] = $ArticleModel->getCateList(true,0,5);
 		$TipModel = new TipModel();
 		$tips = $TipModel::where('tip_view',1)->select();
+        // 系统参数
+        if( empty( $systeminfo = cache('systeminfo') ) ){
+            $systeminfo = $SystemModel::get();
+            cache('systeminfo',$systeminfo);
+        }
+		$this->assign('index_title',$systeminfo['sys_keyword']);
 		$this->assign('tips',$tips);
         $this->assign('indexdata', $indexdata);
         $this->assign('title',"首页");
