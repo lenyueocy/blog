@@ -6,7 +6,7 @@
 
 $payload = json_decode(file_get_contents('php://input'), true);
 if(!$payload){
-    `cd /srv/www/blog && git pull origin master 2>&1`;
+    echo `cd /srv/www/blog && git pull origin master 2>&1`;
     echo '<br />';
     echo '<br />';
     echo '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />';
