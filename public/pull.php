@@ -17,4 +17,3 @@ if(!$payload){
     file_put_contents('test.txt','自动pull成功------->form to '.date('Y-m-d H:i',time()).PHP_EOL,FILE_APPEND);
     `cd /srv/www/blog && git pull origin master 2>&1`;
 }
-exit;
