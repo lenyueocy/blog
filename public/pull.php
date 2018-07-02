@@ -5,9 +5,7 @@
 
 
 $payload = json_decode(file_get_contents('php://input'), true);
-echo "<pre>";
-print_r($payload);
-exit;
+
 if(!$payload){
     echo `cd /srv/www/blog && git pull origin master 2>&1`;
     echo '<br />';
