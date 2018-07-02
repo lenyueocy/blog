@@ -16,7 +16,7 @@ if(!$payload){
     header("Content-type: text/html; charset=utf-8");
     // 本地仓库路径
     $local = '/srv/www/blog';
-    $token = 'lenyue';
+    $token = '';
 
     $httpToken = isset($_SERVER['HTTP_X_GITLAB_TOKEN']) ? $_SERVER['HTTP_X_GITLAB_TOKEN'] : '';
     $status = 'success';
