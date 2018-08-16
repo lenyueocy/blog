@@ -54,20 +54,22 @@ class Base extends Controller
 		$SystemModel->where('sys_id',1)->setInc('sys_hits');
 
 		//收集系统访客信息
-        $ipInfo = VisitorInfo::getIpInfo()['data'];
-        $data = [
-            'os'=>VisitorInfo::getOs(),
-            'ip'=>VisitorInfo::GetIp(),
-            'lang'=>VisitorInfo::GetLang(),
-            'isp'=>$ipInfo['isp'],
-            'country'=>$ipInfo['country'],
-            'region'=>$ipInfo['region'],
-            'city'=>$ipInfo['city'],
-            'osinfo'=>$_SERVER['HTTP_USER_AGENT'],
-            'time'=>time(),
-            'datetime'=>date('Y-m-d H:i:s'),
-        ];
-        $PK = $VisitorModel->insert($data);
+        if(isset(VisitorInfo::getIpInfo()['data'])){
+            $ipInfo = VisitorInfo::getIpInfo()['data'];
+            $data = [
+                'os'=>VisitorInfo::getOs(),
+                'ip'=>VisitorInfo::GetIp(),
+                'lang'=>VisitorInfo::GetLang(),
+                'isp'=>$ipInfo['isp'],
+                'country'=>$ipInfo['country'],
+                'region'=>$ipInfo['region'],
+                'city'=>$ipInfo['city'],
+                'osinfo'=>$_SERVER['HTTP_USER_AGENT'],
+                'time'=>time(),
+                'datetime'=>date('Y-m-d H:i:s'),
+            ];
+            $PK = $VisitorModel->insert($data);
+        }
         // 系统参数
         if( empty( $systeminfo = cache('systeminfo') ) ){
             $systeminfo = $SystemModel::get();
