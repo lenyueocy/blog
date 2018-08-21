@@ -54,7 +54,7 @@ class Base extends Controller
 		$SystemModel->where('sys_id',1)->setInc('sys_hits');
 
 		//收集系统访客信息
-        if(isset(VisitorInfo::getIpInfo()['data'])){
+        /*if(isset(VisitorInfo::getIpInfo()['data'])){
             $ipInfo = VisitorInfo::getIpInfo()['data'];
             $data = [
                 'os'=>VisitorInfo::getOs(),
@@ -69,7 +69,8 @@ class Base extends Controller
                 'datetime'=>date('Y-m-d H:i:s'),
             ];
             $PK = $VisitorModel->insert($data);
-        }
+        }*/
+
         // 系统参数
         if( empty( $systeminfo = cache('systeminfo') ) ){
             $systeminfo = $SystemModel::get();
