@@ -351,3 +351,18 @@ function getOs( $os='' )
     }
     return $os;
 }
+
+/**
+ * 数组转化为 json 格式
+ */
+if (!function_exists('arr2json')) {
+    function arr2json($arr) {
+        header("Content-type: text/html; charset=utf-8");
+        //JSON_UNESCAPED_UNICODE（中文不转为unicode ，对应的数字 256）
+        //JSON_UNESCAPED_SLASHES （不转义反斜杠，对应的数字 64）
+        // $json_data=json_encode($data, JSON_UNESCAPED_SLASHES);
+        //通常json_encode只能传入一个常量，如果同时使用2个常量怎么办？
+        //JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES = 320
+        exit(json_encode($arr, 320));
+    }
+}
