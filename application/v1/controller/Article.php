@@ -36,7 +36,7 @@ class Article{
             ->order('art_view desc,art_addtime desc')
             ->select();
         foreach ($articleData as &$val){
-            $val['art_addtime'] = date('y/m/d H:i',$val['art_addtime']);
+            $val['art_addtime'] = date('y年m月d H:i',$val['art_addtime']);
         }
         $pageData = [
             'page'=>$page,
