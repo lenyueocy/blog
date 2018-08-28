@@ -47,5 +47,21 @@ class Article{
             'page'=>$pageData
         ]]);
     }
+    public function detail(){
+        $art_id = request()->param('art_id');
+        if (!$art_id){
+            arr2json(['code'=>'1','msg'=>'没有获取到文章数据','data'=>[]]);
+        }
+        $where = [
+            'art_id'=>$art_id
+        ];
+        $articleData = Db::table($this->article)->field('art_id,art_title,art_img,art_author,art_addtime,art_hit,art_collection,art_view,art_content')
+            ->where($where)
+            ->select();
+
+        arr2json(['code'=>0,'msg'=>'成功','data'=>[
+            'list'=>$articleData,
+        ]]);
+    }
 
 }
