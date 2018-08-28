@@ -58,8 +58,8 @@ class Article{
         $articleData = Db::table($this->article)->field('art_id,art_title,art_img,art_author,art_addtime,art_hit,art_collection,art_view,art_content')
             ->where($where)
             ->find();
-        
-        $articleData['art_addtime'] = date('Y-m-d H:i',$val['art_addtime']);
+
+        $articleData['art_addtime'] = date('Y-m-d H:i',$articleData['art_addtime']);
 
 
         arr2json(['code'=>0,'msg'=>'成功','data'=>[
