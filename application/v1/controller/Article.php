@@ -72,5 +72,12 @@ class Article{
             ['code'=>0,'msg'=>'成功','data'=>$result]
         );
     }
+    public function categorydata(){
+        $id = request()->param('id');
+        $result = model('Article')->getCateGoryArticle($id);
+        arr2json(
+            ['code'=>0,'msg'=>'成功','data'=>$result]
+        );
+    }
 
 }
