@@ -67,7 +67,7 @@ class Article{
         ]]);
     }
     public function category(){
-        $result = model('category')->getCateGory();
+        $result = model('CateGory')->getCateGory();
         arr2json(
             ['code'=>0,'msg'=>'成功','data'=>$result]
         );
