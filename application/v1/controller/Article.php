@@ -66,5 +66,11 @@ class Article{
             'list'=>$articleData,
         ]]);
     }
+    public function category(){
+        $result = model('category')->getCateGory();
+        arr2json(
+            ['code'=>0,'msg'=>'成功','data'=>$result]
+        );
+    }
 
 }

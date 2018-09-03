@@ -36,11 +36,11 @@ return [
 	// QQ 互联配置
 	'qqconnect' => [
 	    //正式环境app
-		'appid'		=>	'101476699',
-		'appkey'	=>	'215213b692ba4279e63689b1d9fc2078',
+//		'appid'		=>	'101476699',
+//		'appkey'	=>	'215213b692ba4279e63689b1d9fc2078',
         //test需要的app
-//        'appid'		=>	'101476765',
-//        'appkey'	=>	'd7dcd4d5786768d7516c92036375de53',
+        'appid'		=>	'101476765',
+        'appkey'	=>	'd7dcd4d5786768d7516c92036375de53',
         // log www 和 不带www 会有一个出现域名不匹配
         'callback'  =>  'http://'.$_SERVER['HTTP_HOST'].'/index/base/callback',
 		'scope'		=>	'get_user_info'
