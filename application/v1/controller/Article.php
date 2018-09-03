@@ -75,6 +75,9 @@ class Article{
     public function categorydata(){
         $id = request()->param('id');
         $result = model('Article')->getCateGoryArticle($id);
+        foreach ($result as &$val){
+            $val['art_addtime'] = date('y-m-d H:i',$val['art_addtime']);
+        }
         arr2json(
             ['code'=>0,'msg'=>'成功','data'=>$result]
         );
