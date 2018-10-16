@@ -12,7 +12,7 @@ use think\Log;
 use think\Cache;
 
 class Article{
-    public $limit = '6';
+    public $limit = '20';
     // 用户表
     public $article = 'lt_article';
 
@@ -32,7 +32,7 @@ class Article{
         }
         $articleData = Db::table($this->article)->field('art_id,art_title,art_content,art_img,art_author,art_addtime,art_hit,art_collection,art_view')
             ->where($where)
-            //->page($page,$this->limit)
+            ->page($page,$this->limit)
             ->order('art_view desc,art_addtime desc')
             ->select();
 
