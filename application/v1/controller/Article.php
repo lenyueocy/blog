@@ -30,7 +30,7 @@ class Article{
         if ($page > $pageCount){
             arr2json(['code'=>'1','msg'=>'没有更多文章了','data'=>[]]);
         }
-        $articleData = Db::table($this->article)->field('art_id,art_title,art_content,art_img,art_author,art_addtime,art_hit,art_collection,art_view')
+        $articleData = Db::table($this->article)->field('art_id,art_title,art_img,art_author,art_addtime,art_hit,art_collection,art_view')
             ->where($where)
             ->page($page,$this->limit)
             ->order('art_view desc,art_addtime desc')
@@ -38,6 +38,7 @@ class Article{
 
         foreach ($articleData as &$val){
             $val['art_addtime'] = date('y-m-d H:i',$val['art_addtime']);
+            $val['art_content'] = strip_tags($val['art_content']);
         }
         $pageData = [
             'page'=>$page,
