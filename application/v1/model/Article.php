@@ -23,7 +23,7 @@ class Article extends Model
             $data = Db::query($sql);
             return $data;
         }
-        $articleData = Db::table($this->article)->field('art_id,art_title,art_content,art_img,art_author,art_addtime,art_hit,art_collection,art_view')
+        $articleData = Db::table('lt_article')->field('art_id,art_title,art_content,art_img,art_author,art_addtime,art_hit,art_collection,art_view')
             ->where($where)
             ->page($params['page'],$params['limit'])
             ->order('art_view desc,art_addtime desc')
