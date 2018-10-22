@@ -32,7 +32,7 @@ class Article{
         }
 
         $params = [
-            "notin"=>$notin,
+            "notin"=>empty($notin)?" ":" art_id NOT IN ({$notin}) ",
             "type"=>$type,
             "page"=>$page,
             "limit"=>$this->limit,
