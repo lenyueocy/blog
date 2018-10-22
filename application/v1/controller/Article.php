@@ -10,6 +10,7 @@ namespace app\v1\controller;
 use think\Db;
 use think\Log;
 use think\Cache;
+use think\Model;
 
 class Article{
     public $limit = '6';
@@ -37,7 +38,7 @@ class Article{
             "limit"=>$this->limit,
         ];
 
-        $articleData = $this->model->getData($params);
+        $articleData = Model("Article")->getData($params);
 
         foreach ($articleData as &$val){
             $val['art_addtime'] = date('y-m-d H:i',$val['art_addtime']);
