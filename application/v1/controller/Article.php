@@ -19,22 +19,25 @@ class Article{
     // 频道列表文章
     public function lists() {
         $page = request()->param('page')?:1;
-        $where = [
-            'art_view' => ['in','1,2']
-        ];
+        $notin = request()->param('notin');
+        $type = request()->param('type');
+
         $count = Db::table($this->article)
             ->field('art_id')
             ->count();
-
         $pageCount = ceil($count/$this->limit);
         if ($page > $pageCount){
             arr2json(['code'=>'1','msg'=>'没有更多文章了','data'=>[]]);
         }
-        $articleData = Db::table($this->article)->field('art_id,art_title,art_content,art_img,art_author,art_addtime,art_hit,art_collection,art_view')
-            ->where($where)
-            ->page($page,$this->limit)
-            ->order('art_view desc,art_addtime desc')
-            ->select();
+
+        $params = [
+            "notin"=>$notin,
+            "type"=>$type,
+            "page"=>$page,
+            "limit"=>$this->limit,
+        ];
+
+        $articleData = $this->model->getData($params);
 
         foreach ($articleData as &$val){
             $val['art_addtime'] = date('y-m-d H:i',$val['art_addtime']);
