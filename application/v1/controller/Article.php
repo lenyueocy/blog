@@ -12,7 +12,7 @@ use think\Log;
 use think\Cache;
 
 class Article{
-    public $limit = '20';
+    public $limit = '6';
     // 用户表
     public $article = 'lt_article';
 
