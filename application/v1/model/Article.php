@@ -18,7 +18,7 @@ class Article extends Model
         $where = [
             'art_view' => ['in','1,2']
         ];
-        if(isset($params['type']) && empty($params['type']) && $params['type']=="rand"){
+        if(isset($params['type']) && !empty($params['type']) && $params['type']=="rand"){
             $sql = "select * from lt_article where id NOT IN ({$params['notin']}) and art_view in (1,2) ORDER BY limit 0,6";
             $data = Db::query($sql);
             return $data;
