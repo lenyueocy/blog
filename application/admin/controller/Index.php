@@ -17,6 +17,9 @@ use app\admin\model\Member as MemberModel;
 
 class Index extends Auth
 {
+    public function _initialize(){
+        parent::_initialize();
+    }
     /**
      * 后台首页
      * @return mixed

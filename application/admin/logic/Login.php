@@ -10,6 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\admin\logic;
 use app\admin\model\Member as MemberModel;
+use think\Session;
 use think\Db;
 
 class Login
@@ -19,10 +20,16 @@ class Login
      * @param $uid
      * @return bool
      */
-    public function checkaccess($uid)
+    public function checkaccess()
     {
+        $uid = Session::get('qq.mem_id');
+        $adminid = Session::get('admin.id');
         $MemberModel = new MemberModel();
         $accesslist = $MemberModel->getAccess();
+        $admindata = Db::table('lt_admin')->field('id')->where(['id'=>$adminid])->find();
+        if($admindata && !empty($admindata)){
+            return true;
+        }
         if( !empty($uid) && !empty($accesslist) && in_array($uid,$accesslist) ){
             return true;
         }else{

@@ -44,6 +44,11 @@
             {empty name="Think.session.qq.nick"}
                 <!--span class="from qqlogin" data-url="{//:url('Base/login')}" data-callback="{//:url('Base/callback')}" style="cursor: pointer">QQ访问</span>-->
                 <span class="from qqlogin" data-url="{:url('Base/login')}" data-callback="{:url('Base/callback')}" style="cursor: pointer"><img src="./static/home/img/icon/qq_logo.png">QQ登录</span>
+                <span class="from"  style="cursor: pointer;">
+                    <a href="{:url('admin/login/index')}" style="color: #fff;
+                    text-shadow: white 0px 0px 10px, white 0px 0px 20px, rgb(0, 255, 255) 0px 0px 30px, rgb(0, 255, 255) 0px 0px 40px, rgb(0, 255, 255) 0px 0px 70px, rgb(0, 255, 255) 0px 0px 80px, rgb(0, 255, 255) 0px 0px 100px;
+                    ">后台登录
+                </span>
             {else/}
                 {$Think.session.qq.nick} <a class='from' href="{:url('Base/qqout')}">退出</a>
             {/empty}
@@ -56,8 +61,13 @@
 
     <!--头部开始-->
     <div class="row header">
-        <div class="col-lg-4 col-md-4 header-logo">
-            <a title="{$Think.config.NAME}" href="{:url('Index/index')}"><img src="home_img/icon/logo.png" /></a>
+        <div class="col-lg-4 col-md-4 header-logo" style="background:none;opacity: 1">
+            <a title="{$Think.config.NAME}" href="{:url('Index/index')}">
+                <!--<img src="home_img/icon/logo.png" />-->
+                <h1 style="line-height: 50px;color: #fff;font-size: 60px;letter-spacing: 30px;font-family: 'Arial','Microsoft YaHei','黑体','宋体',sans-serif;
+                text-shadow: white 0px 0px 10px, white 0px 0px 20px, rgb(0, 255, 255) 0px 0px 30px, rgb(0, 255, 255) 0px 0px 40px, rgb(0, 255, 255) 0px 0px 70px, rgb(0, 255, 255) 0px 0px 80px, rgb(0, 255, 255) 0px 0px 100px;
+                ">冷月博客</h1>
+            </a>
         </div>
         <div class="header-menu col-lg-5 col-md-5 col-xs-12">
             <nav class="navbar navbar-default">

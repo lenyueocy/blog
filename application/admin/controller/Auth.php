@@ -21,7 +21,13 @@ class Auth extends Controller
     public function _initialize()
     {
         $LoginLogic = new LoginLogic();
-        if( !$LoginLogic->checkaccess(Session::get('qq.mem_id'))){
+        /*echo "<pre>";
+        print_r(Session::set('qq.mem_id',1));
+        print_r(Session::get('qq.mem_id'));
+        exit;
+        Session::get('qq.mem_id');*/
+//        Session::delete('qq.mem_id');
+        if( !$LoginLogic->checkaccess()){
             $this->redirect('Admin/Login/index');
         }
     }
@@ -55,6 +61,7 @@ class Auth extends Controller
     public function logout()
     {
         Session::delete('qq');
+        Session::delete('admin');
 		return ["err"=>0,"msg"=>"退出完成!","data"=>""];
     }
 
